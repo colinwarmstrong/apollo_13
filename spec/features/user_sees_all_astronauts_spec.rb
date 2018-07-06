@@ -43,6 +43,8 @@ describe 'user visits /astronauts' do
     space_mission_1 = astronaut.space_missions.create(title: 'Apollo 13', trip_length: 12)
     space_mission_2 = astronaut.space_missions.create(title: 'Capricorn 4', trip_length: 13)
 
-    expect(page).to have_content("Neil Armstrong Total Time in Space: 25 days")
+    visit astronauts_path
+
+    expect(page).to have_content("Total Time in Space: 25 days")
   end
 end
